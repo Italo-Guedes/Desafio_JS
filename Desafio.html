@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Desafio DigiSystem</title>
+</head>	
+<body>
+	<script>
+		function executar(){
+			let idade = document.getElementById("idade").value;
+			console.log("Idade: " + idade)
+			document.getElementById("resultado").innerHTML = "A idade é: " + idade 
+		}
+
+		function lista_decrescente(){
+			let idades_decrescente = [];
+			let qual_idade = document.getElementById("idade").value;
+	
+			while (qual_idade >= 0){
+				let idade_decrescente = qual_idade;				
+					idades_decrescente.push(idade_decrescente)
+					qual_idade--;
+			}			
+			document.getElementById("lista_decrescente").innerHTML = "A lista descrescente é: " + idades_decrescente
+		}
+
+		function lista_pula_linha(){
+			let qual_idade = document.getElementById("idade").value;
+			const a = document.getElementById("lista_pula_linha");
+			for (let i = 0; i <= qual_idade; qual_idade--){
+				a.innerHTML += qual_idade + '<br>';
+			}			
+		}
+
+		function numeros_pares(){
+			let lista = [];
+			let divisao = 3 % 2;
+			let numero = 2;
+			let qual_idade = document.getElementById("idade").value;
+
+			while (numero <= qual_idade){
+				numero % 2 === 0 ? lista.push(numero) : "";					
+					numero++;
+			}
+			document.getElementById("numeros_pares").innerHTML = "Os números pares da sua idade são: " + lista//document.write(lista);
+		}
+	</script>
+
+	<form>
+		<label for="idade"> Digite sua idade: </label><br>
+		<input type="number" id="idade" name="idade" value =""><br><br>
+	</form>
+	
+	<button onclick="executar();lista_decrescente();lista_pula_linha();numeros_pares()"> Executar </button>
+
+	<p id="resultado">A idade é: </p>
+	<p id="lista_decrescente"> A lista descrescente é: </p>
+	<p id="lista_pula_linha"> Número abaixo do outro: <br></p>
+	<p id="numeros_pares"> Os números pares da sua idade são: </p>
+
+
+</body>
+</html>
